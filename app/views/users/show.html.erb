@@ -1,7 +1,11 @@
 <div style="display: flex; padding: 0 10%;">
   <div style="width: 30%">
     <h2>User Info</h2>
-    <%= image_tag 'no_image.jpg' %>
+    <% if @user.profile_image_id.present? %>
+      <%= image_tag attachment_url(@user, :profile_image, :fill, 100, 100, format: "jpg") %>
+    <% else %>
+      <%= image_tag 'no_image.jpg' %>
+    <% end %>
     <br>
     <hr>
     name　<%= @user.name %>
@@ -64,7 +68,11 @@
       <hr>
       <div style="display: flex">
         <div style="width: 33%">
-          <%= link_to image_tag('no_image.jpg',width: '40'), book_path(book.id) %>
+          <% if book.user.profile_image_id.present? %>
+            <%= image_tag attachment_url(book.user, :profile_image, :fill, 40, 40, format: "jpg") %>
+          <% else %>
+            <%= link_to image_tag('no_image.jpg', width: '40'), book_path(book.id) %>
+          <% end %>
         </div>
         <div style="width: 33%">
           <%= link_to book.title, book_path(book.id) %>
