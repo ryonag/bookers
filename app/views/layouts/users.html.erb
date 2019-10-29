@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bookers</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_pack_tag 'application' %>
+</head>
+
+<body>
+<%# if flash[:notice] %>
+<!--      <div class="flash">-->
+<%#= flash[:notice] %>
+<!--      </div>-->
+<%# end %>
+<%= render 'layouts/header_users' %>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<%= yield %>
+
+</body>
+<%= render 'layouts/footer' %>
+</html>

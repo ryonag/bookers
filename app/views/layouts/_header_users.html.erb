@@ -1,0 +1,31 @@
+<div class="header_wrapper">
+  <div class="header_title_wrapper">
+    Bookers
+  </div>
+  <div class="header_item_wrapper">
+    <div class="item_content">
+      <%= link_to user_path(@user.id) , class: 'item' do%>
+        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+        Home
+      <% end %>
+    </div>
+    <div class="item_content">
+      <%= link_to users_path, class: 'item' do %>
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+        Users
+      <% end %>
+    </div>
+    <div class="item_content">'
+      <%= link_to books_path, class: 'item' do %>
+        <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+        Books
+      <% end %>
+    </div>
+    <div class="item_content">
+      <%= link_to logout_path, class: 'item' do %>
+        <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+        logout
+      <% end %>
+    </div>
+  </div>
+</div>
