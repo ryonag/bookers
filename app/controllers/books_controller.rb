@@ -7,6 +7,7 @@ class BooksController < ApplicationController
   end
 
   def create
+    @user = current_user
     @books = Book.all
     @book = Book.new(book_params)
     if @book.save
@@ -23,6 +24,7 @@ class BooksController < ApplicationController
   end
 
   def edit
+    @user = current_user
     @book = Book.find(params[:id])
   end
 

@@ -1,7 +1,7 @@
 <div style="display: flex; padding: 0 10%;">
   <div style="width: 30%">
     <h2>User Info</h2>
-    <% if @user.profile_image_id.present? %>
+    <% if @user.present? && @user.profile_image_id.present? %>
       <%= image_tag attachment_url(@user, :profile_image, :fill, 100, 100, format: "jpg") %>
     <% else %>
       <%= image_tag 'no_image.jpg' %>
